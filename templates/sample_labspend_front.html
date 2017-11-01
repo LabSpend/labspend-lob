@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
+    <style>
+    *,
+    *:before,
+    *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 6.25in;
+        height: 4.25in;
+        margin: 0;
+        padding: 0;
+        /* your background image should have dimensions of 1875x1275 pixels. */
+        background: linear-gradient(90deg, #7474BF 10%, #348AC7 90%);
+        background-size: 6.25in 4.25in;
+        background-repeat: no-repeat;
+    }
+    /* do not put text outside of the safe area */
+
+    #safe-area {
+        position: absolute;
+        width: 5.875in;
+        height: 3.875in;
+        left: 0.1875in;
+        top: 0.1875in;
+        text-align: center;
+    }
+
+    #name {
+        font-family: 'Open Sans Condensed';
+        font-size: .23in;
+        text-transform: uppercase;
+        letter-spacing: .03in;
+        color: white;
+        margin-top: .4in;
+    }
+
+    #headline {
+        font-family: 'Open Sans Condensed';
+        font-size: .2in;
+    }
+
+    #icon-wrapper {
+        margin-top: .4in;
+    }
+
+    .icon {
+        text-align: center;
+        display: inline-block;
+        width: 1.5in;
+    }
+
+    .icon img {
+        width: 1in;
+    }
+
+    .icon-heading {
+        font-family: 'Open Sans Condensed';
+        font-size: .16in;
+        text-transform: uppercase;
+        letter-spacing: .03in;
+        color: white;
+    }
+
+    #logo {
+        height: .7in;
+        margin-top: .4in;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- do not put text outside of the safe area -->
+    <div id="safe-area">
+        <div id="name">Dear {{ lab_name }}</div>
+        <div id="headline">Let us save you on {{ product_name }}</div>
+        <div id="icon-wrapper">
+            <div class="icon">
+                <div class="icon-heading">What you're paying: {{ old_cost }}</div>
+            </div>
+            <div class="icon">
+                <div class="icon-heading">
+                    What we charge: {{ new_cost }}
+                </div>
+            </div>
+        </div>
+        <!-- your logo here! -->
+        <img src="https://labspend.com/images/logo-black-text.png" id="logo">
+    </div>
+</body>
+
+</html>

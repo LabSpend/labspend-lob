@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
+    <style>
+    *,
+    *:before,
+    *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 6.25in;
+        height: 4.25in;
+        margin: 0;
+        padding: 0;
+        /* your background image should have dimensions of 1875x1275 pixels. */
+        background: linear-gradient(90deg, #7474BF 10%, #348AC7 90%);
+        background-size: 6.25in 4.25in;
+        background-repeat: no-repeat;
+    }
+    /* do not put text outside of the safe area */
+
+    #safe-area {
+        position: absolute;
+        width: 5.875in;
+        height: 3.875in;
+        left: 0.1875in;
+        top: 0.1875in;
+    }
+
+    #ink-free {
+        position: absolute;
+        width: 3.5in;
+        height: 2.7in;
+        right: -0.1875in;
+        bottom: -0.1875in;
+        background-color: white;
+    }
+
+    #logo {
+        width: 1.5in;
+        position: absolute;
+        right: .1in;
+        top: .1in;
+    }
+    
+    #message {
+        position: absolute;
+        width: 2.2in;
+        height: 2in;
+        top: 1.3in;
+        left: .25in;
+        font-family: 'Open Sans Condensed';
+        font-size: .15in;
+    }
+
+    .accent {
+        font-size: .16in;
+        text-transform: uppercase;
+        letter-spacing: .03in;
+        color: white;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- do not put text outside of the safe area -->
+    <div id="safe-area">
+        <!-- your logo here! -->
+        <img src="https://labspend.com/images/logo-black-text.png" id="logo">
+        <div id="message">
+            <div class="accent">
+                Dear {{ lab_name }},
+            </div>
+            <br> Let us save you time and money on purchasing lab supplies. Go ahead and visit:
+            <br>
+            <br>
+            <div class="accent">
+                labspend.com
+            </div>
+            <br> so you can finally stop hunting down sales reps for quotes!
+            <br />
+            <br />
+            <small>Note: this is completely free.</small>
+        </div>
+        <div id="ink-free"></div>
+    </div>
+
+</body>
+
+</html>
