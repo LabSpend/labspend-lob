@@ -35,7 +35,7 @@
 
     #name {
         font-family: 'Open Sans Condensed';
-        font-size: .23in;
+        font-size: .36in;
         text-transform: uppercase;
         letter-spacing: .03in;
         color: white;
@@ -44,7 +44,7 @@
 
     #headline {
         font-family: 'Open Sans Condensed';
-        font-size: .2in;
+        font-size: .3in;
     }
 
     #icon-wrapper {
@@ -63,7 +63,7 @@
 
     .icon-heading {
         font-family: 'Open Sans Condensed';
-        font-size: .16in;
+        font-size: .22in;
         text-transform: uppercase;
         letter-spacing: .03in;
         color: white;
@@ -83,11 +83,14 @@
         <div id="headline">Let us save you on {{ product_name }}</div>
         <div id="icon-wrapper">
             <div class="icon">
-                <div class="icon-heading">What you're paying: {{ old_cost }}</div>
+                <div class="icon-heading">What you're paying: 
+                    <br /> {{ old_cost }}
+                </div>
             </div>
             <div class="icon">
                 <div class="icon-heading">
-                    What we charge: {{ new_cost }}
+                    What we charge: 
+                    <br />  {{ new_cost }}
                 </div>
             </div>
         </div>
