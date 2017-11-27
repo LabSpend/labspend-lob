@@ -71,7 +71,13 @@
 
     #logo {
         height: .7in;
-        margin-top: .4in;
+        margin-top: .2in;
+    }
+
+    #url {
+        color: white;
+        font-size: .15in;
+        font-family: 'Open Sans Condensed';
     }
     </style>
 </head>
@@ -80,7 +86,7 @@
     <!-- do not put text outside of the safe area -->
     <div id="safe-area">
         <div id="name">Dear {{ lab_name }}</div>
-        <div id="headline">Let us save you on {{ product_name }}</div>
+        <div id="headline">We can save you money on {{ product_name }}</div>
         <div id="icon-wrapper">
             <div class="icon">
                 <div class="icon-heading">What you're paying: 
@@ -96,6 +102,7 @@
         </div>
         <!-- your logo here! -->
         <img src="https://labspend.com/images/logo-black-text.png" id="logo">
+        <div id="url"> https://labspend.com </div>
     </div>
 </body>
 

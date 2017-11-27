@@ -1,0 +1,8 @@
+to.name length must be less than or equal to 40 characters long or to must be a string,12,Bob Sauer,25g of IPTG,131,99,Massachusetts Institute of Technology ,12,400 Main St.,12,Blg68/Rm565,Cambridge ,MA ,02142
+to.name length must be less than or equal to 40 characters long or to must be a string,34,Molee Charkrab,10g of IPTG,186,59,SCRIPPS RESEARCH INSTITUTE ,34,"130 SCRIPPS WAY., Bldg C Room C376",34,,JUPITER,FL,33458-5284
+to.name length must be less than or equal to 40 characters long or to must be a string,14,Christine Bentivoglio,5g of IPTG,187,32,DARTMOUTH MEDICAL SCHOOL ,14,74 COLLEGE ST ,14,,HANOVER ,NH ,03755
+to.name length must be less than or equal to 40 characters long or to must be a string,31,Patrick McConnell,50g of DTT,418,159,Washington University St. Louis,31,"4523 CLAYTON AVE., 416 MCD-CELL",31,,SAINT LOUIS ,MO ,63110
+to.address_zip is not a valid ZIP code or to must be a string,39,Bridget Erickson,25g of Ampicillin Na,194,49,PEPROTECH INC,39,"PRINCETON BUSINESS PARK, 5 CRESCENT AVE",39,,ROCKY HILL ,NJ,008553
+to.name length must be less than or equal to 40 characters long or to must be a string,31,PING CHENA nbg 23 30,500g of Yeast Extract,99,55,Mt. Sinai School of Medicine,31,"101st Street Between Madison a,",31,,New York ,NY,10029
+to.name length must be less than or equal to 40 characters long or to must be a string,32,Earlene Schmitt,5kg of Glycine,86,79,Baylor College of Medicine,32,"One Baylor Plaza, WESTBROOK 304B",32,,Houston,TX,77030
+to.name length must be less than or equal to 40 characters long or to must be a string,13,Bi-Huei Hou,5kg of Glycine,206,99,CARNEGIE INSTITUTE FOR SCIENCE,13,260 PANAMA ST,13,,STANFORD,CA,94305-4101

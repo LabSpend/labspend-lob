@@ -5,7 +5,9 @@ import os
 import sys
 
 # TODO: Get Sean's API Key
-# lob.api_key = ''
+lob.api_key = 'live_95337b5989e89aad9b29213b60bf8ec2c2f'
+#'test_7baa7aea320d8335cadddb18749494228ec'
+# 'live_95337b5989e89aad9b29213b60bf8ec2c2f'
 
 success_csv_fields = [
     'lab_name',
