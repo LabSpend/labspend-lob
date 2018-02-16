@@ -64,8 +64,13 @@
         letter-spacing: .03in;
         color: white;
     }
-    #offer {
+    #offer {  
+        position: absolute;      
+        width: 1.7in;
         color: white;
+        right: .001in;
+        top: .7in;
+        font-family: 'Open Sans Condensed';
     }
     </style>
 </head>
@@ -75,6 +80,7 @@
     <div id="safe-area">
         <!-- your logo here! -->
         <img src="https://labspend.com/images/logo-black-text.png" id="logo">
+        <small id="offer"> Offer Expires December 15th </small>
         <div id="message">
             <div class="accent">
                 Dear {{ lab_name }},
@@ -94,7 +100,6 @@
                 <li> Analytics </li>
             </ul>
             <small>Note: this is completely free.</small><br>
-            <small id="offer"> Offer Expires December 15th </small>
         </div>
         <div id="ink-free"></div>
     </div>

@@ -5,7 +5,7 @@ import os
 import sys
 
 # TODO: Get Sean's API Key
-lob.api_key = 'live_95337b5989e89aad9b29213b60bf8ec2c2f'
+lob.api_key = 'test_7baa7aea320d8335cadddb18749494228ec'
 #'test_7baa7aea320d8335cadddb18749494228ec'
 # 'live_95337b5989e89aad9b29213b60bf8ec2c2f'
 
@@ -47,7 +47,7 @@ def create_from_address():
 if __name__=='__main__':
 
   # usage:
-  #   python postcard.py input.csv
+  #   python letter.py input.csv
   #   logs to csv's in the output directory
 
   # Input check
@@ -79,10 +79,8 @@ if __name__=='__main__':
   success_filename = os.path.join(output_dir, 'success.csv')
   errors_filename = os.path.join(output_dir, 'errors.csv')
 
-  with open('templates/sample_labspend_front.html', 'r') as front_file,\
-       open('templates/sample_labspend_back.html', 'r') as back_file:
-      front_html = front_file.read()
-      back_html = back_file.read()
+  with open('template/sample_labspend_letter.html', 'r') as letter_file:
+      html_file = letter_file.read()
 
   try:
       with open(input_filename, 'r') as input, \
@@ -91,7 +89,20 @@ if __name__=='__main__':
 
           # Print mode to screen
           mode = lob.api_key.split('_')[0]
-          print('Sending postcards in ' + mode.upper() + ' mode.')
+        
+          if(mode == 'LIVE'):  
+            correct_mode = False
+            while(not correct_mode):
+              check = input('Are you sure you want to run live? [Y,N] ')
+              if(check == 'Y'):
+                correct_mode = True
+              elif(check == 'N'):
+                sys.exit(2)
+              else:
+                print('Please type Y or N')
+                continue 
+
+          print('Sending letters in ' + mode.upper() + ' mode.')
 
           input_csv = csv.DictReader(input)
           errors_csv_fields += input_csv.fieldnames
@@ -103,11 +114,12 @@ if __name__=='__main__':
 
           # Loop through input CSV rows
           for idx, row in enumerate(input_csv):
-              # Create postcard from row
+              # Create letter from row
               try:
-                  postcard = lob.Postcard.create(
+                  letter = lob.Letter.create(
                       to_address={
-                          'name':            row['lab_name'] + ', ' + row['to[company]'],
+                          'name': row['first_name'] + ' ' + row['last_name'],
+                          'company': row['to[company]'],
                           'address_line1':   row['to[address_line1]'],
                           'address_line2':   row['to[address_line2]'],
                           'address_city':    row['to[address_city]'],
@@ -116,15 +128,12 @@ if __name__=='__main__':
                           'address_country': 'US'
                       },
                       from_address=from_address,
-                      size='4x6',
-                      front=front_html,
-                      back=back_html,
+                      color=True,
+                      file=html_file,
                       merge_variables={
-                          'lab_name':        row['lab_name'],
-                          'product_name':    row['product_name'],
-                          'old_cost':        '$' + row['old_cost'],
-                          'new_cost':        '$' + row['new_cost']
-                      }
+                          'last_name': row['last_name'] 
+                      },
+                      address_placement='insert_blank_page'
                   )
               except Exception as e:
                   error_row = {'error': e}
@@ -136,14 +145,14 @@ if __name__=='__main__':
               else:
                 # record successful send
                   success_csv.writerow({
-                      'lab_name':      postcard.to_address.name,
-                      'id':            postcard.id,
-                      'url':           postcard.url,
-                      'address_line1': postcard.to_address.address_line1,
-                      'address_line2': postcard.to_address.address_line2,
-                      'address_city':  postcard.to_address.address_city,
-                      'address_state': postcard.to_address.address_state,
-                      'address_zip':   postcard.to_address.address_zip
+                      'lab_name':      letter.to_address.name,
+                      'id':            letter.id,
+                      'url':           letter.url,
+                      'address_line1': letter.to_address.address_line1,
+                      'address_line2': letter.to_address.address_line2,
+                      'address_city':  letter.to_address.address_city,
+                      'address_state': letter.to_address.address_state,
+                      'address_zip':   letter.to_address.address_zip
                   })
 
                   # Print success
